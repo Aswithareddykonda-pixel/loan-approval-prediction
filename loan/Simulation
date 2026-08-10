@@ -1,0 +1,40 @@
+Compile the program:
+
+javac src/LoanApprovalPrediction.java
+
+Run it:
+
+java -cp src LoanApprovalPrediction
+Simulation Input
+
+For example:
+
+======================================
+       LOAN APPROVAL PREDICTION
+======================================
+
+Training dataset loaded.
+Training records: 10
+
+Enter Applicant Details
+
+Applicant Income: 6000
+Co-Applicant Income: 2000
+Loan Amount: 200
+Credit History (1 = Good, 0 = Bad): 1
+Education (1 = Graduate, 0 = Not Graduate): 1
+Property Area (2 = Urban, 1 = Semiurban, 0 = Rural): 2
+Output
+--------------------------------------
+Prediction Result
+--------------------------------------
+
+Applicant Income     : 6000.0
+Co-Applicant Income : 2000.0
+Loan Amount         : 200.0
+Credit History      : Good
+
+Final Decision: LOAN APPROVED
+
+Reason: Applicant has suitable income and credit history.
+--------------------------------------

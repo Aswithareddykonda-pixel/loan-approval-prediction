@@ -1,0 +1,172 @@
+import java.util.*;
+
+class LoanApplicant {
+    double income;
+    double coApplicantIncome;
+    double loanAmount;
+    int creditHistory;
+    int education;
+    int propertyArea;
+    int approved;
+
+    LoanApplicant(double income, double coApplicantIncome,
+                  double loanAmount, int creditHistory,
+                  int education, int propertyArea, int approved) {
+
+        this.income = income;
+        this.coApplicantIncome = coApplicantIncome;
+        this.loanAmount = loanAmount;
+        this.creditHistory = creditHistory;
+        this.education = education;
+        this.propertyArea = propertyArea;
+        this.approved = approved;
+    }
+}
+
+public class LoanApprovalPrediction {
+
+    static List<LoanApplicant> dataset = new ArrayList<>();
+
+    // Train sample data
+    static void loadData() {
+
+        dataset.add(new LoanApplicant(
+                5000, 2000, 150, 1, 1, 2, 1));
+
+        dataset.add(new LoanApplicant(
+                2500, 1000, 200, 0, 1, 1, 0));
+
+        dataset.add(new LoanApplicant(
+                7000, 3000, 250, 1, 1, 2, 1));
+
+        dataset.add(new LoanApplicant(
+                3000, 500, 180, 0, 0, 0, 0));
+
+        dataset.add(new LoanApplicant(
+                6000, 1500, 120, 1, 1, 2, 1));
+
+        dataset.add(new LoanApplicant(
+                2800, 700, 160, 0, 0, 1, 0));
+
+        dataset.add(new LoanApplicant(
+                8000, 2500, 300, 1, 1, 2, 1));
+
+        dataset.add(new LoanApplicant(
+                3500, 1000, 220, 0, 1, 0, 0));
+
+        dataset.add(new LoanApplicant(
+                5500, 1800, 140, 1, 1, 1, 1));
+
+        dataset.add(new LoanApplicant(
+                2200, 500, 180, 0, 0, 0, 0));
+    }
+
+    // Simple prediction model
+    static int predict(double income,
+                       double coApplicantIncome,
+                       double loanAmount,
+                       int creditHistory,
+                       int education,
+                       int propertyArea) {
+
+        double totalIncome = income + coApplicantIncome;
+
+        /*
+         * Decision rules:
+         *
+         * Good credit history is the most important factor.
+         * Higher income compared with loan amount improves approval.
+         */
+
+        if (creditHistory == 1 &&
+            totalIncome >= loanAmount * 20) {
+
+            return 1;
+        }
+
+        if (creditHistory == 1 &&
+            totalIncome >= 5000 &&
+            loanAmount <= 200) {
+
+            return 1;
+        }
+
+        return 0;
+    }
+
+    static String getResult(int prediction) {
+
+        if (prediction == 1) {
+            return "LOAN APPROVED";
+        }
+
+        return "LOAN REJECTED";
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("======================================");
+        System.out.println("       LOAN APPROVAL PREDICTION");
+        System.out.println("======================================");
+
+        loadData();
+
+        System.out.println("\nTraining dataset loaded.");
+        System.out.println("Training records: " + dataset.size());
+
+        System.out.println("\nEnter Applicant Details");
+
+        System.out.print("Applicant Income: ");
+        double income = scanner.nextDouble();
+
+        System.out.print("Co-Applicant Income: ");
+        double coIncome = scanner.nextDouble();
+
+        System.out.print("Loan Amount: ");
+        double loanAmount = scanner.nextDouble();
+
+        System.out.print("Credit History (1 = Good, 0 = Bad): ");
+        int creditHistory = scanner.nextInt();
+
+        System.out.print("Education (1 = Graduate, 0 = Not Graduate): ");
+        int education = scanner.nextInt();
+
+        System.out.print("Property Area (2 = Urban, 1 = Semiurban, 0 = Rural): ");
+        int propertyArea = scanner.nextInt();
+
+        int prediction = predict(
+                income,
+                coIncome,
+                loanAmount,
+                creditHistory,
+                education,
+                propertyArea
+        );
+
+        System.out.println("\n--------------------------------------");
+        System.out.println("Prediction Result");
+        System.out.println("--------------------------------------");
+
+        System.out.println("Applicant Income     : " + income);
+        System.out.println("Co-Applicant Income : " + coIncome);
+        System.out.println("Loan Amount         : " + loanAmount);
+        System.out.println("Credit History      : " +
+                (creditHistory == 1 ? "Good" : "Bad"));
+
+        System.out.println("\nFinal Decision: " + getResult(prediction));
+
+        if (prediction == 1) {
+            System.out.println(
+                    "Reason: Applicant has suitable income and credit history.");
+        } else {
+            System.out.println(
+                    "Reason: Income/loan ratio or credit history is insufficient.");
+        }
+
+        System.out.println("--------------------------------------");
+
+        scanner.close();
+    }
+}

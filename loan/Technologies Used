@@ -1,0 +1,25 @@
+Programming Language
+
+Java
+
+Used for implementing the prediction system.
+
+Machine Learning Concept
+
+Classification
+
+The system has two possible outputs:
+
+1 → Approved
+0 → Rejected
+Algorithm
+
+Decision Tree / Rule-Based Classification
+
+The project can be upgraded to use an actual Decision Tree, Random Forest, Logistic Regression, or other classification algorithm.
+
+Development Tools
+Java JDK
+VS Code / IntelliJ IDEA / Eclipse
+Git
+GitHub

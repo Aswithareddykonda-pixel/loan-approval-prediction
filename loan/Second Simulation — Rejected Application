@@ -1,0 +1,24 @@
+Input:
+
+Applicant Income: 2500
+Co-Applicant Income: 500
+Loan Amount: 200
+Credit History: 0
+Education: 0
+Property Area: 0
+
+Output:
+
+--------------------------------------
+Prediction Result
+--------------------------------------
+
+Applicant Income     : 2500.0
+Co-Applicant Income : 500.0
+Loan Amount         : 200.0
+Credit History      : Bad
+
+Final Decision: LOAN REJECTED
+
+Reason: Income/loan ratio or credit history is insufficient.
+--------------------------------------

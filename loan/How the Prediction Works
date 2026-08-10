@@ -1,0 +1,29 @@
+| Feature             | Description                       |
+| ------------------- | --------------------------------- |
+| Applicant Income    | Applicant's monthly/yearly income |
+| Co-Applicant Income | Income of co-applicant            |
+| Loan Amount         | Requested loan amount             |
+| Credit History      | Previous credit repayment record  |
+| Education           | Graduate / Not Graduate           |
+| Property Area       | Rural / Semiurban / Urban         |
+The basic logic is:
+
+             Loan Application
+                    |
+                    ↓
+           Applicant Details
+                    |
+                    ↓
+            Credit History
+                    |
+                    ↓
+             Income Analysis
+                    |
+                    ↓
+          Loan Amount Analysis
+                    |
+                    ↓
+             Prediction
+              /       \
+             /         \
+       APPROVED       REJECTED

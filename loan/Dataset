@@ -1,0 +1,21 @@
+For a more realistic project, you can use the commonly available Loan Prediction Dataset containing fields such as:
+Loan_ID
+Gender
+Married
+Dependents
+Education
+Self_Employed
+ApplicantIncome
+CoapplicantIncome
+LoanAmount
+Loan_Amount_Term
+Credit_History
+Property_Area
+Loan_Status
+Example:
+Gender,Married,Dependents,Education,ApplicantIncome,CoapplicantIncome,LoanAmount,CreditHistory,PropertyArea,LoanStatus
+Male,Yes,0,Graduate,5000,2000,150,1,Urban,Y
+Male,No,1,Graduate,2500,1000,200,0,Rural,N
+Female,Yes,0,Graduate,7000,3000,250,1,Urban,Y
+Male,No,2,Not Graduate,3000,500,180,0,Rural,N
+Female,Yes,0,Graduate,6000,1500,120,1,Semiurban,Y

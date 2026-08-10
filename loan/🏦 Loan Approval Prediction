@@ -1,0 +1,13 @@
+. Project Overview
+
+Loan Approval Prediction is a machine learning project that predicts whether a person's loan application should be approved based on factors such as:
+
+Gender
+Marital status
+Education
+Applicant income
+Co-applicant income
+Loan amount
+Credit history
+Property area
+Number of dependents
